@@ -7,3 +7,6 @@
 [submodule "vifm"]
 	path = vifm
 	url = https://github.com/zachporter1999/vifm.git
+[submodule "xmobar"]
+	path = xmobar
+	url = https://github.com/zachporter1999/xmobar.git
