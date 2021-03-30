@@ -10,3 +10,9 @@
 [submodule "xmobar"]
 	path = xmobar
 	url = https://github.com/zachporter1999/xmobar.git
+[submodule "terminator"]
+	path = terminator
+	url = https://github.com/zachporter1999/terminator.git
+[submodule "lazygit"]
+	path = lazygit
+	url = https://github.com/zachporter1999/lazygit.git
