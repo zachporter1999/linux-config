@@ -1,3 +1,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/zachporter1999/neovim
+[submodule "fish"]
+	path = fish
+	url = https://github.com/zachporter1999/fish-shell.git
