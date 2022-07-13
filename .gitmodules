@@ -1,18 +1,6 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/zachporter1999/neovim
-[submodule "fish"]
-	path = fish
-	url = https://github.com/zachporter1999/fish-shell.git
-[submodule "vifm"]
-	path = vifm
-	url = https://github.com/zachporter1999/vifm.git
 [submodule "xmobar"]
 	path = xmobar
 	url = https://github.com/zachporter1999/xmobar.git
-[submodule "terminator"]
-	path = terminator
-	url = https://github.com/zachporter1999/terminator.git
-[submodule "lazygit"]
-	path = lazygit
-	url = https://github.com/zachporter1999/lazygit.git
