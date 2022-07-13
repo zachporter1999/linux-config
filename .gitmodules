@@ -1,6 +1,6 @@
+[submodule "dotfiles"]
+	path = dotfiles
+	url = git@github.com:zachporter1999/dotfiles.git
 [submodule "nvim"]
 	path = nvim
-	url = https://github.com/zachporter1999/neovim
-[submodule "xmobar"]
-	path = xmobar
-	url = https://github.com/zachporter1999/xmobar.git
+	url = git@github.com:zachporter1999/nvim-conf.git
