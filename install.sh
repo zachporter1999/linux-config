@@ -11,9 +11,6 @@ clr_purple="\e[35m"
 
 # Applications to install
 dependancies=(
-    neovim
-    tmux
-    xterm
     lynx
 )
 
@@ -57,47 +54,6 @@ function dep_install() {
     sudo $install ${dependancies[*]} &> $log_file
 }
 
-function dotfile_setup() {
-    # Dotfiles
-    echo -e "${clr_green}Setting up dotfiles${clr_rst}"
-    for file in ./dotfiles/*
-    do
-        #strip path off file
-        filename=$(ls $file | awk -F/ '{print $NF}')
-
-        link_path=$PWD/dotfiles/$filename
-        link_name=$HOME/.$filename
-
-        echo -e "${clr_blue}... Linking $link_path to $link_name${clr_orange}"
-        ln -sf $link_path $link_name
-    done
-}
-
-function config_dir_setup() {
-    # Config directories
-    echo -e "${clr_green}Setting up config dirs${clr_rst}"
-    mkdir -p $HOME/.config
-    for dir in $(ls ./conf.d)
-    do
-        link_path=$PWD/conf.d/$dir/
-        link_name=$HOME/.config/$dir
-
-        echo -e "${clr_blue}... Linking $link_path to $link_name${clr_orange}"
-        ln -sf $link_path $link_name
-    done
-}
-
-function nvim_setup() {
-    # Nvim Setup
-    echo -e "${clr_green}Setting up NeoVim${clr_rst}"
-    nvim --headless -c PackerInstall &> $log_file &
-    pid=$(ps aux | awk '/nvim/ {print $0}')
-
-    echo -e "${clr_blue}... Waiting 10s for plugins to install${clr_rst}"
-    sleep 10
-    sudo pkill nvim
-}
-
 if [ "$1" == "help" ]
 then
     echo "Run this scipt to install:"
@@ -113,10 +69,11 @@ then
     echo "    Help:"
     echo "$ ./install.sh help"
 else
-    dep_install && \
-    dotfile_setup && \
-    config_dir_setup && \
-    nvim_setup
+
+    base_dir=$PWD
+    dep_install
+    cd $base_dir/conf.d/nvim && ./install.sh $1
+    cd $base_dir/dotfiles && ./install.sh  $1
 
     if [ $? -eq 0 ]
     then
