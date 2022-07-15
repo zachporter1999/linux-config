@@ -79,7 +79,7 @@ function config_dir_setup() {
     mkdir -p $HOME/.config
     for dir in $(ls ./conf.d)
     do
-        link_path=$PWD/$dir
+        link_path=$PWD/conf.d/$dir/
         link_name=$HOME/.config/$dir
 
         echo -e "${clr_blue}... Linking $link_path to $link_name${clr_orange}"
