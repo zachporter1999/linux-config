@@ -4,3 +4,7 @@
 [submodule "conf.d/nvim"]
 	path = conf.d/nvim
 	url = https://github.com/zachporter1999/nvim-conf.git
+[submodule "conf.d/nvim/"]
+	url = https://github.com/zachporter1999/nvim-conf.git
+[submodule "dotfiles/"]
+	url = https://github.com/zachporter1999/dotfiles.git
